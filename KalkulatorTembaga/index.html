@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Harga Tembaga Bekas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-section">
+            <h2>Kalkulator Harga Tembaga</h2>
+
+            <h3>1. Pilih Satuan Ukur:</h3>
+            <select id="satuan-ukur">
+                <option value="kilogram">Kilogram</option>
+                <option value="gram">Gram</option>
+            </select>
+
+            <h3>2. Masukkan Berat Total Tembaga Bekas:</h3>
+            <label for="berat-total">Berat Total (kg):</label>
+            <input type="number" id="berat-total" value="0" min="0">
+
+            <h3>3. Pilih/Masukkan Kemurnian Tembaga:</h3>
+            <select id="pilih-kemurnian">
+                <option value="0">Pilih Kemurnian</option>
+                <option value="0.99">Tembaga Murni (99%)</option>
+                <option value="0.80">Tembaga Biasa (80%)</option>
+            </select>
+            <label for="kemurnian-persen">Kemurnian Tembaga (%):</label>
+            <input type="number" id="kemurnian-persen" value="0" min="0" max="100">
+
+            <h3>4. Harga Tembaga Spot (Referensi Visual):</h3>
+            <p>Harga spot (per kg dalam IDR) sebagai referensi:</p>
+            <div id="DMP_5" data-pym-src="//dailymetalprice.com/prices.php?c=cu=kg=IDR"></div>
+
+            <label for="harga-tembaga">Masukkan Harga Tembaga per Pon (Rp):</label>
+            <input type="number" id="harga-tembaga" value="82617.4460"> 
+
+            <h3>5. Selisih Harga (Opsional):</h3>
+            <label for="selisih-harga">Selisih Harga (%):</label>
+            <input type="number" id="selisih-harga" value="0">
+        </div>
+
+        <div class="output-section">
+            <h2>Nilai Total Tembaga:</h2>
+            <div id="nilai-total-tembaga" class="total-harga">Rp 0,00</div>
+            
+            <button id="reset-kalkulator">Reset/Hapus Kalkulator</button>
+
+            <div class="detail-output">
+                <h4>Detail Berat dan Harga</h4>
+                <p>Berat Total Kilogram: <span id="out-kilogram">0.00 kg</span></p>
+                <p>Berat Total Gram: <span id="out-gram">0.00 g</span></p>
+                <p>Harga Penawaran: <span id="harga-penawaran">Rp 0,00</span></p>
+                <p>Harga Akhir: <span id="tanya-harga">Rp 0,00</span></p>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="//dailymetalprice.com/js/pym.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
